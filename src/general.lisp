@@ -17,6 +17,11 @@
       (check-null (img-load (namestring (merge-pathnames filename))))
       (sdl-free-surface ptr)))
 
+(defun load-texture (renderer filename)
+  (autocollect (ptr)
+    (check-null (img-load-texture renderer (namestring (merge-pathnames filename))))
+    (sdl-destroy-texture ptr)))
+
 (defmacro load-from-rw-wrapper (file-specifier load-macro)
   `(let ((rwops-object (sdl2:rw-from-file (namestring ,file-specifier) "rb")))
      (unwind-protect

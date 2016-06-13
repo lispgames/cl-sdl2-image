@@ -9,10 +9,9 @@
 
    ;; General
    #:linked-version
-   #:init #:quit #:load-image #:load-type-rw
+   #:init #:quit #:load-image #:load-texture #:load-type-rw
    ))
 
 (in-package :sdl2-image)
 
  ;; Variables
-
