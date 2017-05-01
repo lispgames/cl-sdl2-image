@@ -57,3 +57,8 @@
 (define-loader-function "xcf")
 (define-loader-function "xpm")
 (define-loader-function "xv")
+
+(defun save-png (surface filename)
+  "Write a surface to a PNG file."
+  (check-rc (img-save-png surface filename)))
+

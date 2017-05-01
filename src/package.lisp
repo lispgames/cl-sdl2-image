@@ -9,7 +9,7 @@
 
    ;; General
    #:linked-version
-   #:init #:quit #:load-image #:load-type-rw
+   #:init #:quit #:load-image #:load-type-rw #:save-png
    ))
 
 (in-package :sdl2-image)
