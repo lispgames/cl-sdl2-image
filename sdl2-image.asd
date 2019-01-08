@@ -6,6 +6,7 @@
 (defsystem :sdl2-image
   :description "Bindings for sdl2_image using autowrap"
   :author "Ryan Pavlik"
+  :maintainer ("Michael Fiano <mail@michaelfiano.com>")
   :license "MIT"
   :version "1.0"
 
