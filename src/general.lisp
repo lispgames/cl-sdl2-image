@@ -13,16 +13,11 @@
 (defun quit () (img-quit))
 
 (defun load-image (filename)
-  (autocollect (ptr)
-      (check-null (img-load (namestring (merge-pathnames filename))))
-      (sdl-free-surface ptr)))
+  (check-null (img-load (namestring (merge-pathnames filename)))))
 
 (defmacro load-from-rw-wrapper (file-specifier load-macro)
   `(let ((rwops-object (sdl2:rw-from-file (namestring ,file-specifier) "rb")))
-     (unwind-protect
-          (autowrap:autocollect (ptr)
-                                (check-null ,load-macro)
-            (sdl-free-surface ptr))
+     (unwind-protect (check-null ,load-macro)
        (sdl2:rw-close rwops-object))))
 
 (defmacro define-loader-function (file-type)
@@ -61,4 +56,3 @@
 (defun save-png (surface filename)
   "Write a surface to a PNG file."
   (check-rc (img-save-png surface filename)))
-

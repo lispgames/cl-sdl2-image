@@ -9,11 +9,12 @@
   :maintainer ("Michael Fiano <mail@michaelfiano.com>")
   :license "MIT"
   :version "1.0"
-
-  :depends-on (:alexandria :defpackage-plus :cl-autowrap :sdl2 :trivial-garbage)
+  :depends-on (#:alexandria
+               #:defpackage-plus
+               #:cl-autowrap
+               #:sdl2)
   :pathname "src"
   :serial t
-
   :components
   ((:file "package")
    (:file "library")
