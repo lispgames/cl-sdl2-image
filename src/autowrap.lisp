@@ -8,6 +8,7 @@
                     "/usr/include/"
                     "/usr/include/arm-linux-gnueabihf"
                     "/usr/local/include/SDL2")
+  :sysincludes `,(uiop:split-string (uiop:getenv "C_INCLUDE_PATH") :separator ":")
   :include-sources ("SDL_image.h")
   :exclude-constants ("^__")
   :symbol-exceptions (("SDL_RWops" . "SDL-RWOPS"))
