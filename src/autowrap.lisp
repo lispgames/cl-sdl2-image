@@ -7,7 +7,8 @@
   :exclude-sources ("/usr/local/lib/clang/([^/]*)/include/(?!stddef.h)"
                     "/usr/include/"
                     "/usr/include/arm-linux-gnueabihf"
-                    "/usr/local/include/SDL2")
+                    "/usr/include/SDL2"
+                    #+darwin "/include/SDL2")
   :sysincludes `,(uiop:split-string (uiop:getenv "C_INCLUDE_PATH") :separator ":")
   :include-sources ("SDL_image.h")
   :exclude-constants ("^__")
